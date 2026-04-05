@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meri Duniyaa - Mahnoor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink: #ff758c;
+            --dark-pink: #ff7eb3;
+            --white: #ffffff;
+            --black: #2d3436;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffe9f0 0%, #ffc1d1 100%);
+            color: var(--black);
+            overflow-x: hidden;
+        }
+
+        /* Heart Background Animation */
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: var(--pink);
+            animation: float 10s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 2s ease-in;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: var(--pink);
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle { font-size: 1.2rem; color: #666; }
+
+        /* Sections */
+        .section {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.8s ease-out;
+        }
+
+        .section.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        h2 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--pink);
+            font-size: 2.5rem;
+            border-bottom: 2px solid var(--pink);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .info-item {
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            border-left: 4px solid var(--pink);
+        }
+
+        .label { font-weight: 600; color: var(--pink); font-size: 0.9rem; }
+        .value { display: block; font-size: 1.1rem; }
+
+        /* Nicknames */
+        .nicknames span {
+            display: inline-block;
+            background: var(--pink);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+
+        /* Nikkah Special Section */
+        .nikkah-section {
+            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+            color: white;
+            padding: 50px 30px;
+            border-radius: 30px;
+            margin-top: 60px;
+            box-shadow: 0 20px 40px rgba(255, 117, 140, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nikkah-section h2 { color: white; border-color: white; }
+
+        .nikkah-note {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .ring-icon {
+            font-size: 50px;
+            margin: 20px 0;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        footer {
+            padding: 40px 0;
+            font-size: 0.8rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hearts" id="heartContainer"></div>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <header>
+            <h1>Meri Duniyaa</h1>
+            <p class="subtitle">🎀 Mahnoor 🎀</p>
+            <p>Since July 2022 💍</p>
+            <div style="margin-top: 20px;">⬇ Scroll Down </div>
+        </header>
+
+        <!-- Profile Section -->
+        <div class="section">
+            <h2>About Her</h2>
+            <div class="info-grid">
+                <div class="info-item"><span class="label">Name</span><span class="value">Mahnoor ❤</span></div>
+                <div class="info-item"><span class="label">Age</span><span class="value">17 Years 🥰</span></div>
+                <div class="info-item"><span class="label">Height</span><span class="value">5.3</span></div>
+                <div class="info-item"><span class="label">Weight</span><span class="value">45 kg</span></div>
+                <div class="info-item"><span class="label">Birthday</span><span class="value">01 Dec 2008</span></div>
+                <div class="info-item"><span class="label">Eyes</span><span class="value">Dark Brown 🤎</span></div>
+            </div>
+        </div>
+
+        <!-- Favorites Section -->
+        <div class="section">
+            <h2>Her Favorites</h2>
+            <div class="info-grid">
+                <div class="info-item"><span class="label">Food</span><span class="value">Biryani ✨</span></div>
+                <div class="info-item"><span class="label">Game</span><span class="value">Minecraft ☺</span></div>
+                <div class="info-item"><span class="label">Place</span><span class="value">Gilgit & Islamabad</span></div>
+                <div class="info-item"><span class="label">Animal</span><span class="value">Cat 🐱</span></div>
+                <div class="info-item"><span class="label">Fruit</span><span class="value">Pomegranate ♈</span></div>
+                <div class="info-item"><span class="label">Color</span><span class="value">Black 🖤</span></div>
+            </div>
+        </div>
+
+        <!-- Nicknames Section -->
+        <div class="section">
+            <h2>Names I Call Her</h2>
+            <div class="nicknames">
+                <span>Meri Mano 👀</span><span>Meri Shehzadi 😘</span><span>Meri Princess 👸</span>
+                <span>Meri Motoo 🌹</span><span>Meri Jaan 👀🫀</span><span>Meri Pari 🎀</span>
+                <span>Future Wifey 😭❤</span>
+            </div>
+            <h2 style="margin-top:20px;">Names She Calls Me</h2>
+            <div class="nicknames">
+                <span>Aap 👀</span><span>Munir 😭❤</span><span>Mota 😭</span>
+                <span>Hoor Pari ✨</span><span>Mera Bacha ❤</span>
+            </div>
+        </div>
+
+        <!-- Things I Love -->
+        <div class="section">
+            <h2>What I Love About Her</h2>
+            <ul style="text-align: left; list-style: none; padding: 0;">
+                <li>👀 Her Eyes & Smile</li>
+                <li>😩 Her Voice & Anger</li>
+                <li>🥺 Her Loyalty & Love</li>
+                <li>🎀 Everything About Her</li>
+            </ul>
+        </div>
+
+        <!-- Promises -->
+        <div class="section">
+            <h2>Our Promises</h2>
+            <p>✨ Always take a stand for each other.</p>
+            <p>✨ Always fix the fights and stay forever.</p>
+            <p>✨ Share everything, hide nothing.</p>
+            <p>✨ World tour together InshAllah 🌍</p>
+            <p>✨ Protect our bond from evil eyes 🧿</p>
+        </div>
+
+        <!-- SPECIAL NIKKAH FINALE -->
+        <div class="section nikkah-section">
+            <div class="ring-icon">💍</div>
+            <h2>The Final Promise</h2>
+            <div class="nikkah-note">
+                "Mahnoor, you are the best thing that ever happened to me. From our first call to our quality time, every second has been a blessing. I don't just want you for today, I want you for my Nikkah and for Jannah."
+                <br><br>
+                <strong>"Hamesha Sath Rehna Hai... Get Nikkahfied InshAllah! 😩🥺🎀"</strong>
+                <br><br>
+                I love you more than words can say. You complete my soul.
+            </div>
+            <div class="ring-icon">✨❤️✨</div>
+        </div>
+
+        <footer>
+            Created with love by Munir for Mahnoor 💍
+        </footer>
+    </div>
+
+    <script>
+        // Create Floating Hearts
+        function createHearts() {
+            const container = document.getElementById('heartContainer');
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+                container.appendChild(heart);
+            }
+        }
+
+        // Intersection Observer for Scroll Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        createHearts();
+    </script>
+</body>
+</html>
